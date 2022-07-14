@@ -44,7 +44,7 @@ public class RetryTest {
         }
 
         RetryConfig config = RetryConfig.<MyHttpResponse>custom()
-                                        .maxAttempts(2) //change this to 5
+                                        .maxAttempts(5) //change this to 5
                                         .waitDuration(Duration.ofMillis(1000))
                                         .retryOnResult(response -> response.status() == 500)
                                         .retryOnException(e -> e instanceof WebServiceException)
